@@ -7,13 +7,13 @@
 <form action="{{ route('posts.store') }}" method="POST">
     @csrf
     <div>
-        <input type="text" name="title" >
+        <input type="text" name="title" value="{{ old('title') }}">
     </div>
     @error('title')
         <div>{{ $message }}</div>
     @enderror
     <div>
-        <textarea name="content"></textarea>
+        <textarea name="content">{{ old('content') }}</textarea>
     </div>
     @error('content')
     <div>{{ $message }}</div>
